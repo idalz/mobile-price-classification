@@ -7,7 +7,9 @@ xgboost
 catboost
 tqdm
 PyYAML
+dataclasses
 notebook
+kaggle
 python-box
 ensure
 fastapi
