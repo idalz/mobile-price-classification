@@ -1,0 +1,16 @@
+numpy 
+pandas
+matplotlib
+seaborn
+scikit-learn
+xgboost
+catboost
+tqdm
+PyYAML
+notebook
+python-box
+ensure
+fastapi
+uvicorn
+Jinja2
+-e .
