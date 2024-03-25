@@ -19,4 +19,8 @@ class DataTransformationConfig:
     raw_data_path: Path
     validation_status: str
     local_data_file: Path
-    
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    data_path: Path 

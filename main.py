@@ -1,6 +1,8 @@
 from mobilePriceRangePrediction.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from mobilePriceRangePrediction.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from mobilePriceRangePrediction.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
+from mobilePriceRangePrediction.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
+
 from mobilePriceRangePrediction.logging import logger
 
 # Data Ingestion
@@ -29,6 +31,16 @@ try:
     data_transformation = DataTransformationTrainingPipeline()
     data_transformation.main()
     logger.info("Data transformation stage completed.")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+# Model Trainer
+try:
+    logger.info("Model training stage started.")
+    model_trainer = ModelTrainerTrainingPipeline()
+    model_trainer.main()
+    logger.info("Model training stage completed.")
 except Exception as e:
     logger.exception(e)
     raise e

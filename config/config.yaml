@@ -15,4 +15,7 @@ data_transformation:
   raw_data_path: artifacts/data/raw
   validation_status: artifacts/data/validation_status.txt
   local_data_file: artifacts/data/processed
-  
+
+model_trainer: 
+  root_dir: artifacts/model
+  data_path: artifacts/data/processed 
