@@ -23,7 +23,7 @@ except Exception as e:
     logger.exception(e)
     raise e
 
-# Data Validation
+# Data Transformation
 try:
     logger.info("Data transformation stage started.")
     data_transformation = DataTransformationTrainingPipeline()
