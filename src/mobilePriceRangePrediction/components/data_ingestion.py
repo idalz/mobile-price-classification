@@ -19,8 +19,11 @@ class DataIngestion:
             api.authenticate()  # This will use your Kaggle API token stored in ~/.kaggle/kaggle.json
 
             # Download the dataset
-            dataset_name = "iabhishekofficial/mobile-price-classification"
-            api.dataset_download_files(dataset_name, path=self.config.local_data_file, unzip=True)  # Unzip the downloaded files
+            api.dataset_download_files(
+                dataset=self.config.source, 
+                path=self.config.local_data_file, 
+                unzip=True
+            )
 
             logger.info("Dataset downloaded successfully.")
             print("Dataset downloaded successfully.")
