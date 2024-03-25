@@ -12,4 +12,11 @@ class DataValidationConfig:
     root_dir: Path
     STATUS_FILE: str
     ALL_REQUIRED_FILES: list
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    raw_data_path: Path
+    validation_status: str
+    local_data_file: Path
     

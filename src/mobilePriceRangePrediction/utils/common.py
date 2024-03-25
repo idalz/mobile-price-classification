@@ -5,6 +5,7 @@ from mobilePriceRangePrediction.logging import logger
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
+import dill
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -40,3 +41,22 @@ def get_size(path: Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
+
+
+def save_object(file_path:Path, obj: object):
+    try:
+        dir_path = os.path.dirname(file_path)
+        os.makedirs(dir_path, exist_ok=True)
+
+        with open(file_path, 'wb') as file_obj:
+            dill.dump(obj, file_obj)
+    except Exception as e:
+        raise logger.info(e)
+    
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise logger.info(e)
+    

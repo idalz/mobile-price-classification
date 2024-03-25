@@ -1,6 +1,10 @@
 from mobilePriceRangePrediction.constants import *
 from mobilePriceRangePrediction.utils.common import read_yaml, create_directories
-from mobilePriceRangePrediction.entity import DataIngestionConfig, DataValidationConfig
+from mobilePriceRangePrediction.entity import (
+    DataIngestionConfig, 
+    DataValidationConfig,
+    DataTransformationConfig
+)
 class ConfigurationManager:
     def __init__(
             self,
@@ -36,4 +40,18 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            raw_data_path=config.raw_data_path,
+            validation_status=config.validation_status,
+            local_data_file=config.local_data_file
+        )
+
+        return data_transformation_config
     

@@ -6,6 +6,13 @@ data_ingestion:
   local_data_file: artifacts/data/raw
 
 data_validation:
-  root_dir: artifacts/data_validation
-  STATUS_FILE: artifacts/data_validation/status.txt
+  root_dir: artifacts/data
+  STATUS_FILE: artifacts/data/validation_status.txt
   ALL_REQUIRED_FILES: ['train.csv'] # We can add test.csv too.
+
+data_transformation:
+  root_dir: artifacts/data
+  raw_data_path: artifacts/data/raw
+  validation_status: artifacts/data/validation_status.txt
+  local_data_file: artifacts/data/processed
+  
