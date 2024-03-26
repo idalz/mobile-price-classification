@@ -32,3 +32,10 @@ class ModelEvaluationConfig:
     data_path: Path
     model_path: Path
     metric_file_name: Path
+
+@dataclass(frozen=True)
+class ModelPredictionConfig:
+    root_dir: Path
+    preprocessor_path: Path
+    model_path: Path
+    

@@ -26,3 +26,8 @@ model_evaluation:
   data_path: artifacts/data/processed 
   model_path: artifacts/model
   metric_file_name: artifacts/model/metrics.csv
+
+prediction:
+  root_dir: artifacts
+  preprocessor_path: artifacts/preprocessor/preprocessor.pkl
+  model_path: artifacts/model/model.pkl

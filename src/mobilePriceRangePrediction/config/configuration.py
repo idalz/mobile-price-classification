@@ -5,7 +5,8 @@ from mobilePriceRangePrediction.entity import (
     DataValidationConfig,
     DataTransformationConfig,
     ModelTrainerConfig,
-    ModelEvaluationConfig
+    ModelEvaluationConfig,
+    ModelPredictionConfig
 )
 class ConfigurationManager:
     def __init__(
@@ -83,4 +84,17 @@ class ConfigurationManager:
         )
 
         return model_evaluation_config
+    
+    def get_prediction_config(self) -> ModelPredictionConfig:
+        config = self.config.prediction
+
+        create_directories([config.root_dir])
+
+        prediction_config = ModelPredictionConfig(
+            root_dir=config.root_dir,
+            preprocessor_path=config.preprocessor_path,
+            model_path=config.model_path,
+        )
+
+        return prediction_config
     
