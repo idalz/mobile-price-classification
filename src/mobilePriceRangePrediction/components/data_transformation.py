@@ -56,6 +56,12 @@ class DataTransformation:
 
         train_arr = np.c_[input_feature_train_arr, target_feature_train_arr]
         test_arr = np.c_[inpute_feature_test_arr, target_feature_test_arr]
+
+        ### Save the preprocessor
+        save_object(
+            file_path = os.path.join(self.config.preprocessor_path,'preprocessor.pkl'),
+            obj = preprocessor
+        )
         
         ### Save the data
         save_object(

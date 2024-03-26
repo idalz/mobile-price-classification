@@ -52,7 +52,8 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             raw_data_path=config.raw_data_path,
             validation_status=config.validation_status,
-            local_data_file=config.local_data_file
+            local_data_file=config.local_data_file,
+            preprocessor_path=config.preprocessor_path
         )
 
         return data_transformation_config

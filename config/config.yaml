@@ -11,10 +11,11 @@ data_validation:
   ALL_REQUIRED_FILES: ['train.csv'] # We can add test.csv too.
 
 data_transformation:
-  root_dir: artifacts/data
+  root_dir: artifacts
   raw_data_path: artifacts/data/raw
   validation_status: artifacts/data/validation_status.txt
   local_data_file: artifacts/data/processed
+  preprocessor_path: artifacts/preprocessor
 
 model_trainer: 
   root_dir: artifacts/model

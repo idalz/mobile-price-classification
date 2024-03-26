@@ -19,6 +19,7 @@ class DataTransformationConfig:
     raw_data_path: Path
     validation_status: str
     local_data_file: Path
+    preprocessor_path: Path
 
 @dataclass(frozen=True)
 class ModelTrainerConfig:
