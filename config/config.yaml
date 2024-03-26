@@ -19,3 +19,9 @@ data_transformation:
 model_trainer: 
   root_dir: artifacts/model
   data_path: artifacts/data/processed 
+
+model_evaluation:
+  root_dir: artifacts/model
+  data_path: artifacts/data/processed 
+  model_path: artifacts/model
+  metric_file_name: artifacts/model/metrics.csv
