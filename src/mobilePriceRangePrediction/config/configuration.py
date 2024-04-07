@@ -88,8 +88,6 @@ class ConfigurationManager:
     def get_prediction_config(self) -> ModelPredictionConfig:
         config = self.config.prediction
 
-        create_directories([config.root_dir])
-
         prediction_config = ModelPredictionConfig(
             root_dir=config.root_dir,
             preprocessor_path=config.preprocessor_path,

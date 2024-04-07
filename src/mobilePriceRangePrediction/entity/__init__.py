@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from pydantic import BaseModel
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -38,4 +39,26 @@ class ModelPredictionConfig:
     root_dir: Path
     preprocessor_path: Path
     model_path: Path
-    
+
+@dataclass(frozen=True)  
+class PredictionRequest(BaseModel):
+    battery_power: int
+    blue: str
+    clock_speed: float
+    dual_sim: str
+    fc: int
+    four_g: str
+    int_memory: int
+    m_dep: float
+    mobile_wt: int
+    n_cores: int
+    pc: int
+    px_height: int
+    px_width: int
+    ram: int
+    sc_h: int
+    sc_w: int
+    talk_time: int
+    three_g: str
+    touch_screen: str
+    wifi: str

@@ -15,9 +15,9 @@ class PredictionPipeline:
 
         # Transform the data
         transformed_data = preprocessor.transform(data)
-
+        
         # Make the prediction
         prediction = model.predict(transformed_data)
-
+        
         return prediction
     

@@ -60,3 +60,10 @@ def load_object(file_path):
     except Exception as e:
         raise logger.info(e)
     
+def classify_prediction(argument: int):
+    return {
+        0: "Low",
+        1: "Medium",
+        2: "High",
+        3: "Very High"
+    }.get(argument, "Invalid level")
