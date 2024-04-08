@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ content['title']}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/form.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <form id="mobileSpects" action="{{url_for('predict')}}" method="POST">
+            <h2>{{ content['form_title'] }}</h2>
+            
+            <label for="battery_power">Battery Power (mAh):</label>
+            <input type="number" id="battery_power" name="battery_power" placeholder="Enter battery power" required><br>
+
+            <label for="blue">Bluetooth:</label>
+            <select id="blue" name="blue" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="clock_speed">Clock Speed (GHz):</label>
+            <input type="number" id="clock_speed" name="clock_speed" placeholder="Enter clock speed" required><br>
+
+            <label for="dual_sim">Dual SIM Support:</label>
+            <select id="dual_sim" name="dual_sim" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="fc">Front Camera (megapixels):</label>
+            <input type="number" id="fc" name="fc" placeholder="Enter front camera resolution" required><br>
+
+            <label for="four_g">4G Support:</label>
+            <select id="four_g" name="four_g" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="int_memory">Internal Memory (GB):</label>
+            <input type="number" id="int_memory" name="int_memory" placeholder="Enter internal memory" required><br>
+
+            <label for="m_dep">Mobile Depth (cm):</label>
+            <input type="number" id="m_dep" name="m_dep" placeholder="Enter mobile depth" required><br>
+
+            <label for="mobile_wt">Mobile Weight (g):</label>
+            <input type="number" id="mobile_wt" name="mobile_wt" placeholder="Enter mobile weight" required><br>
+
+            <label for="n_cores">Number of Cores:</label>
+            <input type="number" id="n_cores" name="n_cores" placeholder="Enter number of cores" required><br>
+
+            <label for="pc">Primary Camera (megapixels):</label>
+            <input type="number" id="pc" name="pc" placeholder="Enter primary camera resolution" required><br>
+
+            <label for="px_height">Pixel Height of Display:</label>
+            <input type="number" id="px_height" name="px_height" placeholder="Enter pixel height of display" required><br>
+
+            <label for="px_width">Pixel Width of Display:</label>
+            <input type="number" id="px_width" name="px_width" placeholder="Enter pixel width of display" required><br>
+
+            <label for="ram">RAM (MB):</label>
+            <input type="number" id="ram" name="ram" placeholder="Enter RAM capacity" required><br>
+
+            <label for="sc_h">Screen Height (cm):</label>
+            <input type="number" id="sc_h" name="sc_h" placeholder="Enter screen height" required><br>
+
+            <label for="sc_w">Screen Width (cm):</label>
+            <input type="number" id="sc_w" name="sc_w" placeholder="Enter screen width" required><br>
+
+            <label for="talk_time">Talk Time (hours):</label>
+            <input type="number" id="talk_time" name="talk_time" placeholder="Enter talk time" required><br>
+
+            <label for="three_g">3G Support:</label>
+            <select id="three_g" name="three_g" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="touch_screen">Touch Screen:</label>
+            <select id="touch_screen" name="touch_screen" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="wifi">Wi-Fi Support:</label>
+            <select id="wifi" name="wifi" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <div class="submit-container">
+                <input type="submit" value="Submit">
+            </div>
+            <h2 id="predictedPrice" class="predicted-price" style="display: none;">
+                Predicted Class: {{results}}
+            </h2>
+        </form>
+    </div>
+    <script>
+        document.getElementById('mobileSpects').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Serialize form data into a JSON object
+            var predictionRequest = {
+                "battery_power": parseInt(document.getElementById('battery_power').value),
+                "blue": document.getElementById('blue').value,
+                "clock_speed": parseFloat(document.getElementById('clock_speed').value),
+                "dual_sim": document.getElementById('dual_sim').value,
+                "fc": parseInt(document.getElementById('fc').value),
+                "four_g": document.getElementById('four_g').value,
+                "int_memory": parseInt(document.getElementById('int_memory').value),
+                "m_dep": parseFloat(document.getElementById('m_dep').value),
+                "mobile_wt": parseInt(document.getElementById('mobile_wt').value),
+                "n_cores": parseInt(document.getElementById('n_cores').value),
+                "pc": parseInt(document.getElementById('pc').value),
+                "px_height": parseInt(document.getElementById('px_height').value),
+                "px_width": parseInt(document.getElementById('px_width').value),
+                "ram": parseInt(document.getElementById('ram').value),
+                "sc_h": parseInt(document.getElementById('sc_h').value),
+                "sc_w": parseInt(document.getElementById('sc_w').value),
+                "talk_time": parseInt(document.getElementById('talk_time').value),
+                "three_g": document.getElementById('three_g').value,
+                "touch_screen": document.getElementById('touch_screen').value,
+                "wifi": document.getElementById('wifi').value
+            };
+
+            // Send AJAX request to /predict endpoint
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(predictionRequest)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json(); // Parse JSON response
+                } else {
+                    throw new Error('Error getting prediction');
+                }
+            })
+            .then(data => {
+                var predictedPriceElement = document.getElementById('predictedPrice');
+                predictedPriceElement.textContent = 'Predicted price: ' + data.prediction;
+                predictedPriceElement.style.display = 'block'; // Show the element
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ content['title'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/index.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="quote">
+        <h2>{{ content['quote_h2'] | safe }}</h2>
+        <p>{{ content['quote_p'] }}</p>
+        <button onclick="window.location.href='/form'">{{ content['quote_button'] }}</button>
+    </div>
+    <footer class="footer">
+                <a href="https://www.linkedin.com/in/idalez/">
+                    <img src="{{ url_for('static', path='images/linkedin_icon.png') }}" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/idalz">
+                    <img src="{{ url_for('static', path='images/github_icon.png') }}" alt="GitHub">
+                </a>
+                <a href="https://www.kaggle.com/idalez">
+                    <img src="{{ url_for('static', path='images/kaggle_icon.png') }}" alt="Kaggle">
+                </a>
+    </footer>
+</body>
+</html>

@@ -40,7 +40,6 @@ class ModelPredictionConfig:
     preprocessor_path: Path
     model_path: Path
 
-@dataclass(frozen=True)  
 class PredictionRequest(BaseModel):
     battery_power: int
     blue: str
