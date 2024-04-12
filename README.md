@@ -24,7 +24,7 @@ This project aims to predict mobile price class based on their features using a 
 3. **Data Preprocessing**: The collected data undergoes preprocessing to clean, transform, and prepare it for model training.
 4. **Model Training**:  Various models are evaluated, and the best one is selected (based on micro f1 score). The model is trained to predict the price class of mobile phones based on their features.
 5. **Model Evaluation**: The trained model undergoes evaluation on test data, and a file is retained containing metrics such as micro F1-Score, micro Precision, and micro Recall.
-6. **Web Application**: A user-friendly web application is developed to allow users to input a mobile spects and receive real-time price classification.
+6. **Web Application**: A user-friendly web application is developed to allow users to input a mobile spects and receive mobile classification.
 
 By combining data collection, validation and preprocessing, model training and evaluation, and web development techniques, this project offers a comprehensive solution for mobile price classification that is easily accessible and usable by users.
 
