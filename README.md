@@ -177,7 +177,7 @@ Ensure the container is running by opening your browser and navigating to `local
 2. Assign a resource group name.
 3. Assign a registry name.
 4. Assign a location.
-5. Click on `preview+create` button.
+5. Click on `Review + create` button.
 6. Click on `create` button.
 
 Now, a new container registry is ready!
