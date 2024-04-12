@@ -97,25 +97,13 @@ By following this step, you'll prepare the application for use and ensure that t
 
 ### Running the Application
 
-There are two options to run the application:
-
-- **Using Python**
-
-You can run the app using Python with the following command:
+To run the app, simply execute the following command in your terminal:
    
 ```bash
 python app.py
 ```
 
-- **Using Uvicorn (ASGI)**
-
-Alternatively, you can run the app using Uvicorn with the following command:
-
-```bash
-uvicorn app:app --host 0.0.0.0 --port 80
-```
-
-Once the application is running, you can open your web browser and navigate to `localhost:80` to access the application and try some predictions!
+This will start the Uvicorn server and run the web application. Once the application is up and running, you can open your web browser and navigate to `localhost:80` to access the application and try some predictions!
 
 ---
 ## Project Workflow
@@ -173,7 +161,7 @@ docker pull idalz/mobile-price-range-prediction:latest
 Launch a Docker container based on the downloaded image, specifying port mappings to expose port 80:
 
 ```bash
-docker run -p 80:80 -e PORT=80 idalz/mobile-price-range-prediction:latest
+docker run -p 80:80 idalz/mobile-price-range-prediction:latest
 ```
 
 Ensure the container is running by opening your browser and navigating to `localhost:80`. You can now use the application to make predictions!
