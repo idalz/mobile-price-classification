@@ -10,8 +10,5 @@ WORKDIR /app
 # Install dependencies
 RUN pip install -r requirements.txt
 
-# Expose the port on which the application will run
-EXPOSE $PORT
-
-# Use uvicorn as the entry point to run the FastAPI application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "${PORT}"]
+# Run the app
+CMD ["python3", "app.py"]
