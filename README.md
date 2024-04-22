@@ -1,4 +1,4 @@
-# Mobile Price Range Classification
+# Mobile Price Classification
 
 An end-to-end project utilizing scikit-learn models, FastAPI, Docker, and GitHub Actions for CI/CD deployment on Azure.
 
