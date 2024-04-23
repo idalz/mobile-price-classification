@@ -3,6 +3,12 @@
 An end-to-end project utilizing scikit-learn models, FastAPI, Docker, and GitHub Actions for CI/CD deployment on Azure.
 
 ---
+
+If you'd like to explore the web app, feel free to check out its demo on my [Hugging Face Spaces](https://huggingface.co/spaces/idalz/mobile-price-classification) page.
+
+To explore the detailed research and analysis conducted for the project, refer to the project's [Research Notebook](https://github.com/idalz/mobile-price-range-prediction/blob/main/research/00_idalz_research-notebook.ipynb).
+
+---
 ## Contents
 
 - [Project Overview](#project-overview)
@@ -27,8 +33,6 @@ This project aims to predict mobile price class based on their features using a 
 6. **Web Application**: A user-friendly web application is developed to allow users to input a mobile spects and receive mobile classification.
 
 By combining data collection, validation and preprocessing, model training and evaluation, and web development techniques, this project offers a comprehensive solution for mobile price classification that is easily accessible and usable by users.
-
-To explore the detailed research and analysis conducted for the project, refer to the project's [Research Notebook](https://github.com/idalz/mobile-price-range-prediction/blob/main/research/00_idalz_research-notebook.ipynb).
 
 ---
 ## Core Technologies
