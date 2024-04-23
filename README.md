@@ -4,9 +4,9 @@ An end-to-end project utilizing scikit-learn models, FastAPI, Docker, and GitHub
 
 ---
 
-If you'd like to explore the web app, feel free to check out its demo on my [Hugging Face Spaces](https://huggingface.co/spaces/idalz/mobile-price-classification) page.
+If you'd like to **explore the web app**, feel free to check out its demo on my [Hugging Face Spaces](https://huggingface.co/spaces/idalz/mobile-price-classification) page.
 
-To explore the detailed research and analysis conducted for the project, refer to the project's [Research Notebook](https://github.com/idalz/mobile-price-range-prediction/blob/main/research/00_idalz_research-notebook.ipynb).
+To explore **the research** conducted for the project, refer to the project's [Research Notebook](https://github.com/idalz/mobile-price-range-prediction/blob/main/research/00_idalz_research-notebook.ipynb).
 
 ---
 ## Contents
