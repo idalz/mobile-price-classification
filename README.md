@@ -1,10 +1,8 @@
 # Mobile Price Classification
 
-An end-to-end project utilizing scikit-learn models, FastAPI, Docker, and GitHub Actions for CI/CD deployment on Azure.
+An end-to-end machine learning pipeline to classify mobile phones into price categories using **scikit-learn**. Built a **FastAPI** web app with **Docker**, CI/CD integration via **GitHub Actions**, and deployed it to **Azure**.  
 
 ---
-
-If you'd like to **explore the web app**, feel free to check out its demo on my [Hugging Face Spaces](https://huggingface.co/spaces/idalz/mobile-price-classification) page.
 
 To explore **the research** conducted for the project, refer to the project's [Research Notebook](https://github.com/idalz/mobile-price-range-prediction/blob/main/research/00_idalz_research-notebook.ipynb).
 
