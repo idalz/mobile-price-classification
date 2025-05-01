@@ -23,12 +23,12 @@ To explore **the research** conducted for the project, refer to the project's [R
 
 This project aims to predict mobile price class based on their features using a sklearn model. The workflow involves the following steps:
 
-1. **Data Collection**: Data is obtained from Kaggle's [Mobile Price Classification](https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification) using the Kaggle API. This dataset includes various mobile phone spects such as battery power, number of cores, and RAM.
+1. **Data Collection**: Data is obtained from Kaggle's [Mobile Price Classification](https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification) using the Kaggle API. This dataset includes various mobile phone specs such as battery power, number of cores, and RAM.
 2. **Data Validation**: Ensuring the existence of the data.
 3. **Data Preprocessing**: The collected data undergoes preprocessing to clean, transform, and prepare it for model training.
 4. **Model Training**:  Various models are evaluated, and the best one is selected (based on micro f1 score). The model is trained to predict the price class of mobile phones based on their features.
 5. **Model Evaluation**: The trained model undergoes evaluation on test data, and a file is retained containing metrics such as micro F1-Score, micro Precision, and micro Recall.
-6. **Web Application**: A user-friendly web application is developed to allow users to input a mobile spects and receive mobile classification.
+6. **Web Application**: A user-friendly web application is developed to allow users to input mobile specs and receive mobile classification.
 
 By combining data collection, validation and preprocessing, model training and evaluation, and web development techniques, this project offers a comprehensive solution for mobile price classification that is easily accessible and usable by users.
 
@@ -140,12 +140,12 @@ The form page enables users to input various mobile features. Upon submission, t
 
 #### About Page
 
-The about page offers detailed information about the project, including its purpose, the underlying neural network model used for prediction, and a description of the dataset utilized for training the model.
+The about page offers detailed information about the project, including its purpose, the underlying classification model used for prediction, and a description of the dataset utilized for training the model.
 
 ![About Page](static/images/about_page_img.png)
 *Figure 3: About Page*
 
-These pages collectively provide users with an intuitive and interactive experience, facilitating easy exploration of the application's capabilities and insights into car price predictions.
+These pages collectively provide users with an intuitive and interactive experience, facilitating easy exploration of the application's capabilities and insights into mobile price predictions.
 
 
 ---
